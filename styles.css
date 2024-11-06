@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+/*scroll bar*/
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: #D3D3D3;
+}
+::-webkit-scrollbar-thumb{
+    background: #00FFFF;
+    border-radius: 12px;
+    transition: all 0.1s ease;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #00FFFF;
+}
+
+/*navbar styling*/
+nav{
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width:100%;
+    padding: 20px 0;
+    z-index: 998;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu','sans-serif';
+}
+nav.sticky{
+    background: #00FFFF;
+    padding: 13px 0;
+}
+nav .navbar{
+    width: 90%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+nav .navbar .logo a{
+    font-weight: 500;
+    font-size: clamp(1rem, 1rem + 2vw, 2rem);
+    color: #00FFFF;
+}
+nav.sticky .navbar .logo a{
+    color:#fff;
+} 
+nav .navbar .menu{
+    display: flex;
+    position: relative;
+}
+nav .navbar .menu li{
+    list-style: none;
+    margin: 0 15px;
+}
+.navbar .menu a{
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    padding: 6px 0;
+    transition: all 0.4s ease;
+}
+.navbar .menu a::before{
+    content:"";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 3px;
+    width: 0%;
+    background-color: #00FFFF;
+    transition: 0.2s ease;
+}
+.navbar .menu a:hover,
+.navbar .menu a:hover::before{
+    width: 100%;
+    color: #00FFFF;
+}
+nav.sticky .menu a{
+    color: #fff;
+}
+nav.sticky .menu a:hover{
+    color: white;
+}
+.navbar .media-icons a{
+    color:#00FFFF;
+    font-size: 18px;
+    margin: 0 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+nav.sticky .media-icons a{
+    color: #fff;
+}
+/*sided nav*/
+nav .menu-btn,
+.navbar .menu .cancel-btn{
+    position: absolute;
+    color: #fff;
+    right: 30px;
+    top: 25px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: none;
+}
+nav .menu-btn{
+    color: #00FFFF;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+nav .menu-btn:hover{
+    transform: scale(1.2);
+}
+
+nav.sticky .menu-btn{
+    color: #fff;
+}
+.navbar .menu .menu-btn{
+    color: #fff;
+}
+
+/*home section styling*/
+
+.home{
+    
+    background-image: url('background.jpeg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    overflow: hidden;
+    font-family: 'Ubuntu', sans-serif;
+}
+.home::before {
+    content: ""; /* Necessary for pseudo-element */
+    position: absolute; /* Position it absolutely within .home */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% transparency */
+    z-index: 1; /* Ensure it sits on top of the background image */
+}
+
+.home-content {
+    position: relative; /* Position relative for stacking context */
+    z-index: 2; /* Ensure content is above the overlay */
+    width: 90%;
+    height: 100%;
+    margin: auto 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+.home .text-one{
+    font-size: 25px;
+}
+.home .text-two{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.home .text-three{
+    font-size: 30px;
+    margin: 5px 0;
+    color: #00FFFF;
+}
+.home .text-four{
+    font-size: 17px;
+    margin: 5px 0;
+}
+.home .button{
+    margin: 14px 0;
+}
+.home .button button{
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 25px;
+    font-weight: 400;
+    background: #00FFFF;
+    color: rgba(26,25,35);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+}
+.home .button button:hover{
+    border-color:rgba(26,25,35);
+    background-color: rgba(26,25,35);
+    color: #00FFFF;  
+}
+/*about section stylinng*/
+section{
+    background-color: rgba(26,25,35);
+    padding-top: 80px;
+}
+section .content{
+    width: 80%;
+    margin: 0px auto;
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section .title{
+    display: flex;
+    justify-content: center;
+    margin-bottom:40px;
+}
+section .title span{
+    color: #00FFFF;
+    font-size: 30px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+}
+section .title span::before,
+section .title span::after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #00FFFF;
+    left: 0;
+    bottom: 0;
+}
+section .title span::after{
+    bottom: -7px;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.about .about-details .left{
+    width: 45%;
+}
+.about .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.about-details .right{
+    width: 55%;
+}
+section .topic{
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.about-details .right p{
+    text-align: justify;
+    color: white;
+}
+section .button{
+    margin: 16px 0;
+}
+section .button button{
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 25px;
+    font-weight: 400;
+    background: #00FFFF;
+    color: rgba(26,25,35);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.4 ease;
+}
+section .button button:hover{
+    border-color: #00FFFF;
+    background-color: rgba(0,0,0,0.12);
+    color: #00FFFF;
+}
+
+/*skills*/
+.skills{
+    background: rgba(26,25,35);
+}
+.skills .content{
+    padding: 40px 0;
+}
+.skills .skills-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.skills-details .text{
+    width: 50%;
+}
+.skills-details p{
+    color: white;
+    text-align: justify;
+}
+.skills .skills-details .experience{
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+.skills-details .experience .num{
+    color: #00FFFF;
+    font-size: 80px;
+}
+.skills-details .experience .exp{
+    color: white;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 6px;
+}
+.skills-details .boxes{
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.skills-details .box{
+    width: calc(100%/2 - 20px);
+    margin: 20px 0;
+}
+.skills-details .boxes .topic{
+    font-size: 20px;
+    color: #00FFFF;
+}
+.skills-details .boxes .percentage{
+    font-size: 60px;
+    color: #00FFFF;
+}
+/*projects*/
+.projects .boxes{
+    display: flex;
+    flex-wrap: wrap; 
+}
+.projects .boxes .box{
+    margin: 20px;
+    width: calc(100%/3 - 40px);
+    text-align: center;
+    border-radius: 12px;
+    padding: 30px 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.12);
+    cursor: default;
+    color: white;
+    transition: all 0.4s ease;
+}
+.projects .boxes .box:hover{
+    background: #00FFFF;
+    color: #fff;
+}
+.projects .boxes .box .icon{
+    height: 50px; 
+    width: 50px; 
+    background:#00FFFF;
+    border-radius: 50%; 
+    text-align: center; 
+    line-height: 50px; 
+    font-size: 18px;
+    color:rgba(26,25,35);
+    margin: 0 auto 10px auto; 
+    transition: all 0.4s ease;
+}
+.boxes .box:hover .icon{
+    background-color: rgba(26,25,35);
+    color: #00FFFF;
+}
+.projects .boxes .box:hover .topic,
+.projects .boxes .box:hover p{
+    color:wrgba(26,25,35);
+    transition: all 0.4s ease;
+}
+.projects .boxes .box:hover .topic,
+.projects .boxes .box:hover p{
+    color: rgba(26,25,35);
+}
+/*contact*/
+.contact{
+    background: rgba(26,25,35);
+}
+.contact .content{
+    margin: 0 auto;
+    padding: 30px 0;
+}
+.contact .text{
+    width: 80%;
+    text-align:center;
+    margin:auto;
+    color: #fff;
+}
+/*footer*/
+footer{
+    background: #00FFFF;
+    padding: 15px 0;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+footer .text span{
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(26,25,35);
+}
+footer .text span a{
+    font-weight: 500;
+    color: rgba(26,25,35);
+}
+footer .text span a:hover{
+    text-decoration: underline;
+}
+/*scoll to top button*/
+.scroll-button a{
+    position:fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    background: #00FFFF;
+    padding: 7px 12px;
+    font-size: 18px;
+    border-radius: 6px;
+    box-shadow: rgba(0,0,0,0.12);
+    display: none;
+
+}
+/*media queries*/
+@media(max-width: 1190px){
+    section .content{
+        width: 85%;
+    }
+}
+@media(max-width: 1000px){
+    .about .about-details{
+        justify-content: center;
+        flex-direction: column;
+    }
+    .about .about-details .left{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .about .about-details .right{
+        width: 90%;
+        margin: 40px 0;
+    }
+    .projects .boxes .box{
+        margin: 20px 0;
+        width: calc(100%/2 - 20px);
+    }
+}
+@media(max-width: 900px){
+    .about .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+@media(max-width: 968px){
+    nav .navbar{
+        width: 90%;
+    }
+    nav .navbar .menu{
+        position: fixed;
+        left: -100%;
+        top: 0;
+        background:rgb(36, 30, 48);
+        height: 100vh;
+        max-width: 400px;
+        width: 100%;
+        padding-top: 60px;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.5s ease;
+    }
+    .navbar.active .menu{
+        left: 0;
+    }
+    .navbar.active .menu a{
+        font-size: 23px;
+        display: block;
+        color: #00FFFF;
+        margin: 10px 0;
+    }
+    nav.sticky .menu a:hover{
+        color: #00FFFF;
+    }
+    nav .navbar .media-icons{
+        display: none;
+    }
+    nav .menu-btn,
+    .navbar .menu .cancel-btn{
+        display: inline-block;
+        color: #00FFFF;
+    }
+    .home{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .home .image{
+        width: 60%;
+        margin-top: 40px;
+    }
+    .home .text-two{
+        font-size: 55px;
+    }
+    .home .text-three{
+        font-size: 30px;
+    }
+    .skills .skills-details{
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .skills-details .text{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .skills-details .boxes{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .projects .boxes .box{
+        margin: 20px 0;
+        width: 100%;
+    }
+    .contact .text{
+        width: 100%;
+    } 
+}
+@media(max-width: 500px){
+    .home .image{
+        width: 75%;
+    }
+    .home .text-two{
+        font-size: 50px;
+    }
+    .home .text-three{
+        font-size:27px;
+    }
+    .skills-details .boxes .percentage{
+        font-size: 50px;
+        color: #00FFFF;
+    }
+}
+
+
